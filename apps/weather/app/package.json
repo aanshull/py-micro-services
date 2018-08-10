@@ -1,0 +1,20 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp --gulpfile app/gulpfile.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Harper",
+  "dependencies": {
+    "express": "~4.14.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.8",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "~1.0.4",
+    "require-dir": "~0.3.0"
+  }
+}
