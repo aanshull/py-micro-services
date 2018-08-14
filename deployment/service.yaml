@@ -1,0 +1,8 @@
+spec:
+  type: LoadBalancer
+  ports:
+  - name: usersvc
+    port: 5000
+    targetPort: 5000
+  selector:
+    service: usersvc
