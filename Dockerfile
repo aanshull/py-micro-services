@@ -1,9 +1,12 @@
-FROM python:3.6
-
-RUN mkdir /code
-WORKDIR /code
-ADD . /code/
+FROM lyft/envoy:latest
+RUN apt-get update && apt-get -q install -y 
+    curl 
+    python-pip 
+    dnsutils
+WORKDIR /application
+COPY requirements.txt .
 RUN pip install -r requirements.txt
-
-EXPOSE 9090
-CMD ["python", "/code/app.py"]
+COPY service.py .
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+ENTRYPOINT [ "./entrypoint.sh" ]
